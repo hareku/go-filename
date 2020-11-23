@@ -7,6 +7,6 @@ import "regexp"
 var reservedChars = regexp.MustCompile(`[./<>|:&?%*"]`)
 
 // EscapeString escapes reserved characters in Unix and Windows.
-func EscapeString(s string) string {
-	return reservedChars.ReplaceAllString(s, "-")
+func EscapeString(s string, repl string) string {
+	return reservedChars.ReplaceAllString(s, repl)
 }

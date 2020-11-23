@@ -52,7 +52,7 @@ func TestEscapeString(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := filename.EscapeString(tt.unescaped); got != tt.escaped {
+			if got := filename.EscapeString(tt.unescaped, "-"); got != tt.escaped {
 				t.Errorf("EscapeString(%v) = %v, want %v", tt.unescaped, got, tt.escaped)
 			}
 		})
@@ -61,6 +61,6 @@ func TestEscapeString(t *testing.T) {
 
 func ExampleEscapeString() {
 	// Use URL as a file name.
-	fmt.Println(filepath.Join("/tmp", filename.EscapeString("https://example.com")))
+	fmt.Println(filepath.Join("/tmp", filename.EscapeString("https://example.com", "-")))
 	// Output: /tmp/https---example-com
 }
