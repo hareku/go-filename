@@ -1,4 +1,4 @@
-// Package filename provides functions to escape string for file name with Go (Golang).
+// Package filename provides functions to escape reserved characters in Unix and Windows.
 package filename
 
 import "regexp"
