@@ -3,11 +3,11 @@ package filename
 
 import "regexp"
 
-// reservedChars references https://en.wikipedia.org/wiki/Filename#Reserved_characters_and_words.
-var reservedChars = regexp.MustCompile(`[.\\/<>|:&?%*"]`)
+// ReservedChars references https://en.wikipedia.org/wiki/Filename#Reserved_characters_and_words.
+var ReservedChars = regexp.MustCompile(`[.\\/<>|:&?%*"]`)
 
 // EscapeString replaces all reserved characters in Unix and Windows with string repl.
-// Tge reserved characters matches [.\\/<>|:&?%*"].
+// The reserved characters matches filename.ReservedChars.
 func EscapeString(s string, repl string) string {
-	return reservedChars.ReplaceAllString(s, repl)
+	return ReservedChars.ReplaceAllString(s, repl)
 }
