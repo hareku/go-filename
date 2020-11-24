@@ -40,7 +40,7 @@ func TestEscapeString(t *testing.T) {
 			escaped:   "a-b-c",
 		},
 		{
-			name:      "persents",
+			name:      "percents",
 			unescaped: "a%b%c",
 			escaped:   "a-b-c",
 		},
