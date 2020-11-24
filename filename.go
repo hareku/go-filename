@@ -7,7 +7,7 @@ import "regexp"
 var ReservedChars = regexp.MustCompile(`[.\\/<>|:&?%*"]`)
 
 // EscapeString replaces all reserved characters in Unix and Windows with string repl.
-// The reserved characters matches filename.ReservedChars.
+// The reserved characters matche filename.ReservedChars.
 func EscapeString(s string, repl string) string {
 	return ReservedChars.ReplaceAllString(s, repl)
 }
