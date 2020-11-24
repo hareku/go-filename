@@ -25,6 +25,11 @@ func TestEscapeString(t *testing.T) {
 			escaped:   "abc---",
 		},
 		{
+			name:      "backSlashes",
+			unescaped: "abc\\\\\\",
+			escaped:   "abc---",
+		},
+		{
 			name:      "pipes",
 			unescaped: "a|b|c",
 			escaped:   "a-b-c",
