@@ -30,14 +30,39 @@ func TestEscapeString(t *testing.T) {
 			escaped:   "abc---",
 		},
 		{
+			name:      "slashes",
+			unescaped: "a/b/c",
+			escaped:   "a-b-c",
+		},
+		{
+			name:      "redirects",
+			unescaped: "a>b<c",
+			escaped:   "a-b-c",
+		},
+		{
 			name:      "pipes",
 			unescaped: "a|b|c",
 			escaped:   "a-b-c",
 		},
 		{
-			name:      "doubleQuotes",
-			unescaped: "\"abc\"",
-			escaped:   "-abc-",
+			name:      "colons",
+			unescaped: "a:b:c",
+			escaped:   "a-b-c",
+		},
+		{
+			name:      "ands",
+			unescaped: "a&b&c",
+			escaped:   "a-b-c",
+		},
+		{
+			name:      "questions",
+			unescaped: "a?b?c",
+			escaped:   "a-b-c",
+		},
+		{
+			name:      "percents",
+			unescaped: "a%b%c",
+			escaped:   "a-b-c",
 		},
 		{
 			name:      "asteriesks",
@@ -45,9 +70,9 @@ func TestEscapeString(t *testing.T) {
 			escaped:   "a-b-c",
 		},
 		{
-			name:      "percents",
-			unescaped: "a%b%c",
-			escaped:   "a-b-c",
+			name:      "doubleQuotes",
+			unescaped: "\"abc\"",
+			escaped:   "-abc-",
 		},
 		{
 			name:      "URL",
