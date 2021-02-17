@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/hareku/filename"
+	"github.com/hareku/go-filename"
 )
 
 func TestEscapeString(t *testing.T) {
