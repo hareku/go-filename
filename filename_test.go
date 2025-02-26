@@ -91,6 +91,6 @@ func TestEscapeString(t *testing.T) {
 
 func ExampleEscapeString() {
 	// Use URL as a file name.
-	fmt.Println(filepath.Join("/tmp", filename.EscapeString("https://example.com", "-")))
+	fmt.Println(filepath.ToSlash(filepath.Join("/tmp", filename.EscapeString("https://example.com", "-"))))
 	// Output: /tmp/https---example-com
 }
