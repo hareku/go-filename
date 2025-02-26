@@ -1,3 +1,3 @@
 module github.com/hareku/go-filename
 
-go 1.15
+go 1.24
